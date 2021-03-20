@@ -58,13 +58,13 @@
 #endif
 
 #ifdef LITEOS
-static ssize_t recvmsg(int sockfd, struct msghdr *msg, int flags);
+ssize_t recvmsg(int sockfd, struct msghdr *msg, int flags)
 {
 
 	return 0;
 }
 
-static struct cmsghdr *
+struct cmsghdr *
 __cmsg_nxthdr (struct msghdr *mhdr, struct cmsghdr *cmsg)
 {
   if ((size_t) cmsg->cmsg_len < sizeof (struct cmsghdr))
